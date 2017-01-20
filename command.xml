@@ -1,0 +1,24 @@
+<grammar version="1.0" xml:lang="fr-FR" mode="voice" root="ruleCOMMAND" xmlns="http://www.w3.org/2001/06/grammar" tag-format="semantics/1.0">
+
+	<rule id="ruleCOMMAND" scope="public">
+    	<tag>out.action=new Object();</tag>
+
+	    <item>Sarah s'il te plait</item>
+
+		<item>
+			<ruleref uri="#COMMAND" />
+			<tag>out.action.mode = "COMMAND"; out.action.cmd = rules.COMMAND.cmd</tag>
+		</item>
+
+	    <tag>out.action._attributes.uri="http://127.0.0.1:8080/sarah/command";</tag>
+	</rule>
+
+	<rule id="COMMAND" scope="public">
+		<one-of>
+			<item>lance CAUDI<tag>out.cmd="runKodi";</tag></item>
+			<item>démarre CAUDI<tag>out.cmd="runKodi";</tag></item>
+			<item>arrête CAUDI<tag>out.cmd="closeKodi";</tag></item>
+		</one-of>
+	</rule>
+
+</grammar>

@@ -1,0 +1,8 @@
+{
+	"modules" : { 
+		"command"  : {
+			"description"		: "Plugin Commands",
+			"version"			: "1.0"
+		}
+	}
+}
